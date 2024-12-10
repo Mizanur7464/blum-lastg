@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blum-lastg/static/css/main.1da70d3f.css",
+    "main.js": "/blum-lastg/static/js/main.69806561.js",
+    "index.html": "/blum-lastg/index.html",
+    "main.1da70d3f.css.map": "/blum-lastg/static/css/main.1da70d3f.css.map",
+    "main.69806561.js.map": "/blum-lastg/static/js/main.69806561.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1da70d3f.css",
+    "static/js/main.69806561.js"
+  ]
+}
