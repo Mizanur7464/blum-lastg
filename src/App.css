@@ -1,0 +1,814 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.app-container {
+  width: 375px;
+  height: 667px;
+  background-color: #000000;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common Components */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-title::after {
+  content: "✓";
+  color: #1d9bf0;
+  font-size: 14px;
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  background-color: #111111;
+  border-top: 1px solid #222;
+}
+
+.nav-item {
+  color: #666;
+  text-align: center;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-icon {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.copyright {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  padding: 8px 0;
+  background-color: #111111;
+}
+
+/* Home Page */
+.crypto-card {
+  background-color: #111111;
+  margin: 10px 15px;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crypto-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.crypto-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+}
+
+.crypto-details {
+  font-size: 14px;
+}
+
+.crypto-bp {
+  color: #888;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.open-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+
+.profile-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #0066ff;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.username {
+  font-size: 16px;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.balance {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 0;
+  font-family: monospace;
+}
+
+.farming-button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  width: calc(100% - 30px);
+  margin: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.farming-button.mining {
+  background-color: #222;
+  color: #888;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.farming-button .mining-icon {
+  color: #ffd700;
+}
+
+.farming-button .amount {
+  color: white;
+  margin-right: 4px;
+}
+
+.farming-button .timer {
+  color: #888;
+  margin-left: auto;
+}
+
+/* Earn Page */
+.earn-page {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.top-card {
+  background-color: #111;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.top-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-card-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.top-card-bp {
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.counter {
+  background-color: #222;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  border-bottom: 1px solid #222;
+  overflow-x: auto;
+}
+
+.category-tab {
+  color: #666;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.category-tab.active {
+  color: white;
+  position: relative;
+}
+
+.category-tab.active::after {
+  content: "•";
+  color: #1d9bf0;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+}
+
+.news-list {
+  padding: 15px;
+}
+
+.news-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #222;
+}
+
+.news-content {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.news-icon {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.news-details {
+  flex: 1;
+}
+
+.news-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.news-bp {
+  color: #666;
+  font-size: 12px;
+}
+
+.start-button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Memopad Page */
+.memopad-content {
+  flex: 1;
+  background-color: #000;
+  color: white;
+}
+
+.memopad-header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #222;
+}
+
+.token-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.token-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.token-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.token-price {
+  font-size: 28px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.memopad-tabs {
+  display: flex;
+  gap: 20px;
+  padding: 0 15px;
+  margin-top: 15px;
+}
+
+.memopad-tab {
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+
+.memopad-tab.active {
+  color: #fff;
+}
+
+.memopad-tab.active::before {
+  content: "•";
+  color: #4caf50;
+  position: absolute;
+  left: -10px;
+  top: 0;
+}
+
+.token-list {
+  padding: 15px;
+}
+
+.token-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #222;
+}
+
+.token-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.token-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.token-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.token-symbol {
+  font-weight: 500;
+}
+
+.token-holders {
+  color: #666;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.token-mc {
+  color: #4caf50;
+  font-size: 14px;
+  text-align: right;
+}
+
+.token-time {
+  color: #666;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* Frens Page */
+.frens-content {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #000;
+}
+
+.frens-emoji {
+  font-size: 40px;
+  margin: 30px 0;
+}
+
+.frens-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.how-it-works {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.how-it-works h3 {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #888;
+}
+
+.steps-container {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+
+.timeline {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #333;
+}
+
+.step {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.step-description {
+  color: #666;
+  font-size: 14px;
+}
+
+.invite-button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+/* Wallet Page */
+.wallet-content {
+  flex: 1;
+  padding: 15px;
+}
+
+/* Referral Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 320px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.referral-code {
+  background-color: #222;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  word-break: break-all;
+}
+
+.referral-code span {
+  flex: 1;
+  font-family: monospace;
+  font-size: 14px;
+  color: #4caf50;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  color: #4caf50;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.share-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.close-button {
+  background-color: #333;
+  color: white;
+}
+
+.mining-status {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 34, 34, 0.95);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.mining-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mining-icon {
+  color: #ffd700;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mining-text {
+  font-size: 14px;
+  color: #888;
+}
+
+.mining-amount {
+  font-weight: 500;
+  color: white;
+}
+
+.mining-timer {
+  font-size: 14px;
+  color: #888;
+}
+
+.mining-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 1s linear;
+}
+
+/* Wallet Page Styles */
+.wallet-page {
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+}
+
+.wallet-content {
+  padding: 20px;
+}
+
+.connect-wallet-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.points-section {
+  margin-top: 30px;
+}
+
+.points-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.points-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.points-balance {
+  background-color: #222;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.wallet-tabs {
+  background-color: #111;
+  padding: 4px;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.wallet-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #666;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.wallet-tab.active {
+  background-color: #333;
+  color: white;
+}
+
+.earn-card {
+  background-color: #111;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.earn-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.earn-icons {
+  display: flex;
+  gap: 4px;
+}
+
+.earn-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+.arrow-icon {
+  color: #666;
+  font-size: 24px;
+}
+
+.balance-item {
+  background-color: #111;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.balance-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.token-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.balance-info .token-name {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.balance-info .token-balance {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.farming-badge {
+  background-color: #1a1a1a;
+  color: #666;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+} 
